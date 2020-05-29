@@ -19,4 +19,5 @@ Nice to have: provide with a playlist for the hike based on today’s weather fo
 | -------------- |
 | Hiking Project |
 | Google Maps    |
+| OpenWeather    |
 | Spotify        |
