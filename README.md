@@ -1,20 +1,20 @@
 # Trailme-Locator
 
-##Team Members
+## Team Members
 - Henri
 - Vanessa
 - Steve
 
-##Value Add Proposal
+## Value Add Proposal
 1. AS A a hiker
 2. I WANT to find a trail at my level
 3. SO THAT I can go hiking 
 
-##MVP
+## MVP
 Hiker picks level of hiking trail, returns trails at that level. 
 Nice to have: provide with a playlist for the hike based on today’s weather forecast
 
-##API list
+## API list
 | Provider       |
 | -------------- |
 | Hiking Project |
