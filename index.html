@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -7,15 +6,71 @@
     <title>TRAILme</title>
 
     <link rel="stylesheet" href="styles.css" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
-    <section class="container">
-      <div>TRAILme</div>
-      <div>Hourly Weather</div>
-      <div>Trail Level</div>
+    <div class="container">
+      <div id="title-bar">TRAILme</div>
+
+      <div id="weather-box">Hourly Weather</div>
+
+      <div id="title">
+        <p>Trail Level</p>
+      </div>
+
+      <div id="trail-levels">
+        <div class="row">
+          <div class="checkboxes">
+            <label>
+              <input type="checkbox" class="filled-in" checked="checked" />
+              <span>Beginners</span>
+            </label>
+          </div>
+
+          <div class="checkboxes">
+            <label>
+              <input type="checkbox" class="filled-in" checked="checked" />
+              <span>Intermediate</span>
+            </label>
+          </div>
+
+          <div class="checkboxes">
+            <label>
+              <input type="checkbox" class="filled-in" checked="checked" />
+              <span>Advance</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="Submit-btn">
+        <a href="results.html" class="waves-effect waves-light btn"
+          >Let's Go!</a
+        >
+      </div>
 
       <script src="trailme.js"></script>
-    </section>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    </div>
   </body>
 </html>
