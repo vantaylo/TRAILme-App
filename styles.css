@@ -17,13 +17,31 @@ body {
 }
 
 .container > div:nth-child(2) {
-  height: 200px;
+  height: auto;
   background-color: #499360;
   margin-bottom: 20px;
 }
 
 .container > div:nth-child(3) {
-  height: 100px;
-  background-color: #97baa4;
+  display: auto;
+  background-color: none;
+}
+
+.container > div:nth-child(4) {
+  display: auto;
+  background-color: none;
   margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.checkboxes {
+  display: auto;
+}
+
+label {
+  margin: 10px;
 }
