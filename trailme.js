@@ -15,8 +15,8 @@
         //console.log(response.hourly[i].weather);
         weatherarray.push(response.hourly[i].weather);
         temparray.push(response.hourly[i].temp);
-        console.log(weatherarray[i]);
-        console.log(temparray[i]);
+        //console.log(weatherarray[i]);
+        //console.log(temparray[i]);
         }
       });
 //create 5 variables( current hour + next for hours)
