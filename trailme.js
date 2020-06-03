@@ -15,14 +15,26 @@
         //console.log(response.hourly[i].weather);
         weatherarray.push(response.hourly[i].weather);
         temparray.push(response.hourly[i].temp);
+        temparray[i] = Math.trunc((temparray[i] - 273.15) * 1.80 + 32);
         //console.log(weatherarray[i]);
         //console.log(temparray[i]);
+        //console.log(weatherarray[i][0].icon);
+        var img = $('<img id="weatherico">');
+        img.attr('src', 'https://openweathermap.org/img/wn/' + weatherarray[i][0].icon + '@2x.png');
+        img.appendTo("#h-" + i.toString() + "-weather");
+        $("#h-" + i.toString() + "-weather").add( "<span>" + weatherarray[i][0].main + "</span>" ).appendTo("#h-" + i.toString() + "-weather");
+        $("#h-" + i.toString() + "-temp").add( "<span>" + temparray[i] + " Degrees Farenheight" + "</span>" ).appendTo("#h-" + i.toString() + "-temp");
         }
       });
 //create 5 variables( current hour + next for hours)
 
 // ajax/promise GET method
-
+/*for(var i = 0; i < 5; i++)
+{
+  console.log(weatherarray[i]);
+  var img = $('<img id="weatherico">')
+  img.attr('src', 'https://openweathermap.org/img/wn/' + weatherarray[i] + '@2x.png')
+}*/
 // get weather API
 
 // create Elements,classes,ID's,attributes and append to html
