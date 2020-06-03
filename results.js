@@ -1,4 +1,3 @@
-// START $(document).ready(function())
 $(document).ready(function () {
   getTrailName();
 });
@@ -30,6 +29,22 @@ function getTrailName(trailName) {
     method: "GET",
   }).then(function (response) {
     var trailName = response.trails;
+    console.log("Response", response);
+    console.log("Trail Name: ", trailName);
+    if (trailName) {
+      for (i = 0; i < trailName.length; i++) {
+        //var trailDiv = $("<div>");
+
+        var trailsDiv = $("<div>");
+
+        var trails = trailsDiv.text(response.trails[i].name);
+
+        //trailsArray.push(response.trails[i].name);
+        $(".append-trail-info").append(trails);
+        console.log("trails", trails);
+        //console.log(trailsArray);
+      }
+    }
     //console.log("Response", response);
     //console.log("Trail Name: ", trailName);
     //$("#trail-name").append(trailName);
