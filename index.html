@@ -17,16 +17,6 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <!--Import materialize.css-->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="css/materialize.min.css"
-      media="screen,projection"
-    />
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
@@ -43,22 +33,36 @@
         <div class="row">
           <div class="checkboxes">
             <label>
-              <input type="checkbox" class="filled-in" checked="checked" />
-              <span>Beginners</span>
+              <input id="easyBtn" type="checkbox" class="filled-in" />
+              <span>Easy</span>
             </label>
           </div>
 
           <div class="checkboxes">
             <label>
-              <input type="checkbox" class="filled-in" checked="checked" />
+              <input id="easyIntBtn" type="checkbox" class="filled-in" />
+              <span>Easy & Intermediate</span>
+            </label>
+          </div>
+
+          <div class="checkboxes">
+            <label>
+              <input id="intermediateBtn" type="checkbox" class="filled-in" />
               <span>Intermediate</span>
             </label>
           </div>
 
           <div class="checkboxes">
             <label>
-              <input type="checkbox" class="filled-in" checked="checked" />
-              <span>Advance</span>
+              <input id="intDiffBtn" type="checkbox" class="filled-in" />
+              <span>Intermediate & Difficult</span>
+            </label>
+          </div>
+
+          <div class="checkboxes">
+            <label>
+              <input id="difficultBtn" type="checkbox" class="filled-in" />
+              <span>Difficult</span>
             </label>
           </div>
         </div>
@@ -71,9 +75,6 @@
       </div>
 
       <script src="trailme.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      
-      <script src = "trailme.js"></script>
     </div>
   </body>
 </html>
