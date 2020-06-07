@@ -16,7 +16,9 @@ $(document).ready(function () {
 $("#easyBtn").click(function (event) {
   if ($(this).is(":checked")) {
     //saving to local storage -checked
+
     localStorage.setItem("easyBtn", "true");
+    localStorage.setItem("currentDifficulty", "easyBtn");
   } else {
     //remove from local storage - uncliked
     localStorage.removeItem("easyBtn");
@@ -26,6 +28,7 @@ $("#easyBtn").click(function (event) {
 $("#easyIntBtn").click(function (event) {
   if ($(this).is(":checked")) {
     localStorage.setItem("easyIntBtn", "true");
+    localStorage.setItem("currentDifficulty", "easyIntBtn");
   } else {
     localStorage.removeItem("easyIntBtn");
   }
@@ -34,6 +37,7 @@ $("#easyIntBtn").click(function (event) {
 $("#intermediateBtn").click(function (event) {
   if ($(this).is(":checked")) {
     localStorage.setItem("intermediateBtn", "true");
+    localStorage.setItem("currentDifficulty", "intermediateBtn");
   } else {
     localStorage.removeItem("intermediateBtn");
   }
@@ -42,6 +46,7 @@ $("#intermediateBtn").click(function (event) {
 $("#intDiffBtn").click(function (event) {
   if ($(this).is(":checked")) {
     localStorage.setItem("intDiffBtn", "true");
+    localStorage.setItem("currentDifficulty", "intDiffBtn");
   } else {
     localStorage.removeItem("intDiffBtn");
   }
@@ -50,6 +55,7 @@ $("#intDiffBtn").click(function (event) {
 $("#difficultBtn").click(function (event) {
   if ($(this).is(":checked")) {
     localStorage.setItem("difficultBtn", "true");
+    localStorage.setItem("currentDifficulty", "difficultBtn");
   } else {
     localStorage.removeItem("difficultBtn");
   }
@@ -81,41 +87,48 @@ $.ajax({
 
 //Create an array of the lat an long for every city. (every city has its own array). push the lat and long of the selected array to a working array
 //clear the working array before the push
-=======
+
 // $(document).ready(function ())
-    //creates arrays to store only the json info we need
-    var weatherarray = [];
-    var temparray = [];
-    // calls open weather API
-    $.ajax({
-      url: "https://api.openweathermap.org/data/2.5/onecall?lat=30.2672&lon=-97.7431&exclude=daily&appid=76177e785f18f1154ee3d5f16bf4b076",
-      method: "GET"
-    })
-      .then(function(response) {
-       // console.log(response.hourly[4]);
-       //runs 5 times for 5 hours
-        for(var i = 0; i < 5; i++){
-        //console.log(response.hourly[i].weather);
-        //pushes necessary json info to the arrays created early
-        weatherarray.push(response.hourly[i].weather);
-        temparray.push(response.hourly[i].temp);
-        //changes temperature to farenheight
-        temparray[i] = Math.trunc((temparray[i] - 273.15) * 1.80 + 32);
-        //console.log(weatherarray[i]);
-        //console.log(temparray[i]);
-        //console.log(weatherarray[i][0].icon);
-        //creates image variable
-        var img = $('<img id="weatherico">');
-        //pulls the image from the openweather projects own image library
-        img.attr('src', 'https://openweathermap.org/img/wn/' + weatherarray[i][0].icon + '@2x.png');
-        //apends to end of page
-        img.appendTo("#h-" + i.toString() + "-weather");
-        //creates the weather type and appends it to table ie. if the weather for that hour is clear, it will say clear next to the icon
-        $("#h-" + i.toString() + "-weather").add( "<span>" + weatherarray[i][0].main + "</span>" ).appendTo("#h-" + i.toString() + "-weather");
-        //creates temperature element and appends the data to the temperature column of the table
-        $("#h-" + i.toString() + "-temp").add( "<span>" + temparray[i] + " Degrees Farenheight" + "</span>" ).appendTo("#h-" + i.toString() + "-temp");
-        }
-      });
+//creates arrays to store only the json info we need
+var weatherarray = [];
+var temparray = [];
+// calls open weather API
+$.ajax({
+  url:
+    "https://api.openweathermap.org/data/2.5/onecall?lat=30.2672&lon=-97.7431&exclude=daily&appid=76177e785f18f1154ee3d5f16bf4b076",
+  method: "GET",
+}).then(function (response) {
+  // console.log(response.hourly[4]);
+  //runs 5 times for 5 hours
+  for (var i = 0; i < 5; i++) {
+    //console.log(response.hourly[i].weather);
+    //pushes necessary json info to the arrays created early
+    weatherarray.push(response.hourly[i].weather);
+    temparray.push(response.hourly[i].temp);
+    //changes temperature to farenheight
+    temparray[i] = Math.trunc((temparray[i] - 273.15) * 1.8 + 32);
+    //console.log(weatherarray[i]);
+    //console.log(temparray[i]);
+    //console.log(weatherarray[i][0].icon);
+    //creates image variable
+    var img = $('<img id="weatherico">');
+    //pulls the image from the openweather projects own image library
+    img.attr(
+      "src",
+      "https://openweathermap.org/img/wn/" + weatherarray[i][0].icon + "@2x.png"
+    );
+    //apends to end of page
+    img.appendTo("#h-" + i.toString() + "-weather");
+    //creates the weather type and appends it to table ie. if the weather for that hour is clear, it will say clear next to the icon
+    $("#h-" + i.toString() + "-weather")
+      .add("<span>" + weatherarray[i][0].main + "</span>")
+      .appendTo("#h-" + i.toString() + "-weather");
+    //creates temperature element and appends the data to the temperature column of the table
+    $("#h-" + i.toString() + "-temp")
+      .add("<span>" + temparray[i] + " Degrees Farenheight" + "</span>")
+      .appendTo("#h-" + i.toString() + "-temp");
+  }
+});
 //create 5 variables( current hour + next for hours)
 
 // ajax/promise GET method
