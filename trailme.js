@@ -87,10 +87,7 @@ $.ajax({
 
 //Create an array of the lat an long for every city. (every city has its own array). push the lat and long of the selected array to a working array
 //clear the working array before the push
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 // $(document).ready(function ())
 //creates arrays to store only the json info we need
 var weatherarray = [];
