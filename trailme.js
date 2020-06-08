@@ -11,7 +11,25 @@ $(document).ready(function () {
   }
   //Cities btn
   $(".dropdown-button").dropdown();
+
+  //prompt for forcing user to pick at least one level
+  $("#submit-btn").click(function (event) {
+    let optionChecked = false;
+
+    $("input").each(function (index) {
+      if ($(this).is(":checked")) {
+        optionChecked = true;
+        window.location.href = "results.html";
+      }
+    });
+
+    if (!optionChecked) {
+      M.toast({ html: "Please, pick at least one level" });
+    }
+  });
 });
+
+//Submit button listener for prompting user to pick at least one level
 
 //USER LOADS PAGE FOR FIRST TIME - all checkboxes empty
 //event listeners for when checkboxes are clicked
