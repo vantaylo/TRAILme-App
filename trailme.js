@@ -9,10 +9,16 @@ $(document).ready(function () {
       $("#" + localStorage.key(i)).prop("checked", true);
     }
   }
-  //Cities btn
+
+  //Cities button dropdown and text update
   $(".dropdown-button").dropdown();
 
-  //prompt for forcing user to pick at least one level
+  $("li a").click(function (event) {
+    let cityPicked = $(this).text();
+    $(".dropdown-button").html(cityPicked);
+  });
+
+  //prompt user to pick at least one level
   $("#submit-btn").click(function (event) {
     let optionChecked = false;
 
@@ -28,8 +34,6 @@ $(document).ready(function () {
     }
   });
 });
-
-//Submit button listener for prompting user to pick at least one level
 
 //USER LOADS PAGE FOR FIRST TIME - all checkboxes empty
 //event listeners for when checkboxes are clicked
