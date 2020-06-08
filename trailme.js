@@ -16,7 +16,9 @@ $(document).ready(function () {
 $("#easyBtn").click(function (event) {
   if ($(this).is(":checked")) {
     //saving to local storage -checked
+
     localStorage.setItem("easyBtn", "true");
+    localStorage.setItem("currentDifficulty", "easyBtn");
   } else {
     //remove from local storage - uncliked
     localStorage.removeItem("easyBtn");
@@ -26,6 +28,7 @@ $("#easyBtn").click(function (event) {
 $("#easyIntBtn").click(function (event) {
   if ($(this).is(":checked")) {
     localStorage.setItem("easyIntBtn", "true");
+    localStorage.setItem("currentDifficulty", "easyIntBtn");
   } else {
     localStorage.removeItem("easyIntBtn");
   }
@@ -34,6 +37,7 @@ $("#easyIntBtn").click(function (event) {
 $("#intermediateBtn").click(function (event) {
   if ($(this).is(":checked")) {
     localStorage.setItem("intermediateBtn", "true");
+    localStorage.setItem("currentDifficulty", "intermediateBtn");
   } else {
     localStorage.removeItem("intermediateBtn");
   }
@@ -42,6 +46,7 @@ $("#intermediateBtn").click(function (event) {
 $("#intDiffBtn").click(function (event) {
   if ($(this).is(":checked")) {
     localStorage.setItem("intDiffBtn", "true");
+    localStorage.setItem("currentDifficulty", "intDiffBtn");
   } else {
     localStorage.removeItem("intDiffBtn");
   }
@@ -50,6 +55,7 @@ $("#intDiffBtn").click(function (event) {
 $("#difficultBtn").click(function (event) {
   if ($(this).is(":checked")) {
     localStorage.setItem("difficultBtn", "true");
+    localStorage.setItem("currentDifficulty", "difficultBtn");
   } else {
     localStorage.removeItem("difficultBtn");
   }
@@ -81,6 +87,7 @@ $.ajax({
 
 //Create an array of the lat an long for every city. (every city has its own array). push the lat and long of the selected array to a working array
 //clear the working array before the push
+
 // $(document).ready(function ())
 //creates arrays to store only the json info we need
 var weatherarray = [];

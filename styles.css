@@ -45,3 +45,6 @@ body {
 label {
   margin: 10px;
 }
+.trail-data {
+  color: green;
+}
