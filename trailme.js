@@ -9,6 +9,8 @@ $(document).ready(function () {
       $("#" + localStorage.key(i)).prop("checked", true);
     }
   }
+  //Cities btn
+  $(".dropdown-button").dropdown();
 });
 
 //USER LOADS PAGE FOR FIRST TIME - all checkboxes empty
