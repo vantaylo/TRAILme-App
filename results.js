@@ -121,10 +121,9 @@ function getTrailName() {
   var apiKey = "200774823-429dcd20b5a00db1d5c1120bef4c2278&maxResults=200";
 
   // hardcoding lat long for Austin and a max distance of 50 miles(for now)
-
-  var lat = 30.266666;
-  var long = -97.73333;
   var maxDist = 50;
+  var lat = localStorage.getItem("trailme_latitude") || "30.266666";
+  var long = localStorage.getItem("trailme_longitude") || "-97.73333";
 
   var hikingQueryURL =
     hikingAPI +
@@ -145,7 +144,7 @@ function getTrailName() {
     // ↓ declaring variable trails to the API object of the trails
     var trails = response.trails;
     //console.log("Response", response);
-    //console.log("Trail Name: ", trails);
+    // console.log("Trail Name: ", trails);
 
     // ↓ declaring variable to receive the data from local storage that user picked from index.html
     //.. currentDifficulty string (not variable name) is the KEY in local storage

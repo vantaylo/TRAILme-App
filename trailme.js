@@ -10,7 +10,7 @@ $(document).ready(function () {
     }
   }
 
-  //Cities button dropdown and text update
+  //cities button dropdown and text update
   $(".dropdown-button").dropdown();
 
   $("li a").click(function (event) {
@@ -18,20 +18,88 @@ $(document).ready(function () {
     $(".dropdown-button").html(cityPicked);
   });
 
+  //object for apiURL
+  var cities = {
+    Austin: {
+      latitude: "30.26",
+      longitude: "-97.73",
+    },
+
+    "San Marcos": {
+      latitude: "29.890661",
+      longitude: "-97.91153",
+    },
+
+    Midland: {
+      latitude: "32.000507",
+      longitude: "-102.077408",
+    },
+
+    "San Antonio": {
+      latitude: "29.424349",
+      longitude: "-98.491142",
+    },
+
+    Houston: {
+      latitude: "29.749907",
+      longitude: "-95.358421",
+    },
+
+    Dallas: {
+      latitude: "32.779167",
+      longitude: "-96.808891",
+    },
+
+    Waco: {
+      latitude: "31.559814",
+      longitude: "-97.1418",
+    },
+
+    Amarillo: {
+      latitude: "35.199165",
+      longitude: "-101.845276",
+    },
+
+    "Corpus Christi": {
+      latitude: "27.800583",
+      longitude: "-97.396378",
+    },
+
+    "El Paso": {
+      latitude: "31.772543",
+      longitude: "-106.460953",
+    },
+  };
+
   //prompt user to pick at least one level
   $("#submit-btn").click(function (event) {
+    // event.preventDefault();
     let optionChecked = false;
 
     $("input").each(function (index) {
       if ($(this).is(":checked")) {
         optionChecked = true;
-        window.location.href = "results.html";
       }
     });
 
+    var currentCity = $(".dropdown-button").text();
+    console.log(currentCity);
+
     if (!optionChecked) {
       M.toast({ html: "Please, pick at least one level" });
+      return;
     }
+
+    if (currentCity === "CITIES") {
+      M.toast({ html: "Please, pick a city" });
+      return;
+    }
+
+    localStorage.setItem("trailme_latitude", cities[currentCity].latitude);
+    localStorage.setItem("trailme_longitude", cities[currentCity].longitude);
+
+    getTrailName();
+    window.location.href = "results.html";
   });
 });
 
