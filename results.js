@@ -1,7 +1,53 @@
 $(document).ready(function () {
   getTrailName();
+  populateTable();
 });
 // ↑ END $(document).ready(function())
+
+//weather dashboard
+
+function populateTable() {
+  var weatherarray = [];
+  var temparray = [];
+
+  $.ajax({
+    url:
+      "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+      localStorage.getItem("trailme_latitude") +
+      "&lon=" +
+      localStorage.getItem("trailme_longitude") +
+      "&exclude=daily&APPID=6331b558a2d7fa66a892d8e22187e11a",
+    method: "GET",
+  }).then(function (response) {
+    for (var i = 0; i < 5; i++) {
+      weatherarray.push(response.hourly[i].weather);
+      temparray.push(response.hourly[i].temp);
+      temparray[i] = Math.trunc((temparray[i] - 273.15) * 1.8 + 32);
+
+      var img = $('<img id="weatherico">');
+
+      img.attr(
+        "src",
+        "https://openweathermap.org/img/wn/" +
+          weatherarray[i][0].icon +
+          "@2x.png"
+      );
+
+      img.appendTo("#h-" + i.toString() + "-weather");
+      $("#h-" + i.toString() + "-weather")
+        .add("<span>" + weatherarray[i][0].main + "</span>")
+        .appendTo("#h-" + i.toString() + "-weather");
+      $("#h-" + i.toString() + "-temp")
+        .add(
+          "<span id = 'tempspan'>" +
+            temparray[i] +
+            " Degrees Farenheight" +
+            "</span>"
+        )
+        .appendTo("#h-" + i.toString() + "-temp");
+    }
+  });
+}
 
 // ↓ Here I am creating a function that appends the cards layout based on the level of
 //.. difficulty received from HikingProject API
@@ -153,8 +199,6 @@ function getTrailName() {
   }).then(function (response) {
     // ↓ declaring variable trails to the API object of the trails
     var trails = response.trails;
-
-
 
     // ↓ declaring variable to receive the data from local storage that user picked from index.html
     //.. currentDifficulty string (not variable name) is the KEY in local storage
