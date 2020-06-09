@@ -12,44 +12,54 @@ function renderCard(levelOfDifficulty, trail) {
     trail.url
   );
   var cardActionDiv = $("<div class ='card-action'>").append(linkEl);
-  var intermediate = $(
-    `<p class ='trail-data' > Level of Difficulty: ${levelOfDifficulty} </p>`
+  var trailLevel = $(
+    `<p class ="trail-data"><a href="https://icons8.com/icon/64470/effort"></a><img
+    class="trail-data"
+    src="https://img.icons8.com/ios-filled/25/000000/effort.png"
+  /> ${levelOfDifficulty} </p>`
   );
-  var trailLengthP = $("<p class ='trail-data left'>").text(
-    "Length: " + trail.length + " miles"
-  );
-  var summary = $("<p class = 'trail-data'>").text("Summary: " + trail.summary);
-  var rating = $("<p class = 'trail-data'>").text(
-    "Review " + trail.stars + "/5"
-  );
-  var cardContentDiv = $("<div class ='card-content .targetDiv'>").append(
-    intermediate,
-    trailLengthP,
-    summary,
-    rating
+  var lengthText = trail.length + " miles";
+  var trailLengthP = $(
+    `<p class ='trail-data'><span class= 'iconify icons' data-icon='mdi-hiking' data-inline='false'></span> ${lengthText}</p>`
   );
 
-  var cardStackedDiv = $("<div class ='card-stacked amber lighten-5'>").append(
-    cardContentDiv,
-    cardActionDiv
+  //var summary = $("<p class = 'trail-data'>").text("Summary: " + trail.summary);
+  var ratingText = trail.stars + "/5";
+  var rating = $(
+    `<p class = 'trail-data'><i class="apps material-icons icons">star</i> ${ratingText}</p>`
   );
-  var trailImageEl = $("<img class ='responsive-img'>").attr(
+  var cardContentDiv = $("<div class ='card-content .targetDiv'>").append(
+    trailLevel,
+    trailLengthP,
+    rating
+  );
+  var trailImageEl = $("<img class = 'materialboxed responsive-img'>").attr(
     "src",
     trail.imgSmallMed
   );
-  var cardImgDiv = $("<div class ='card-image responsive-img'>").append(
-    trailImageEl
+  var nameOfTrail = trail.name;
+  var h2CardTitle = $(
+    `<span class = 'card-title text'><strong>${nameOfTrail}</span></h2>`
   );
-  var cardHorzDiv = $("<div class ='card horizontal'>").append(
+  var cardImgDiv = $("<div class ='card-image'>").append(
+    trailImageEl,
+    h2CardTitle
+  );
+
+  var cardDiv = $("<div class ='card'>").append(
     cardImgDiv,
-    cardStackedDiv
+    cardContentDiv,
+    cardActionDiv
   );
-  var cardH2 = $("<h2 class ='header'>").text(trail.name);
-  var trailCardDiv = $("<div class='col s12 m6 hoverable'>").append(
-    cardH2,
-    cardHorzDiv
+
+  var cardColumnDiv = $("<div class ='col s12 m12 amber lighten-5 '>").append(
+    cardDiv
   );
-  $(".append-trail-info").append(trailCardDiv);
+
+  var cardRow = $("<div class ='row'>").append(cardColumnDiv);
+  //var h2CardTitle = $("<h2 class = 'card-title'>").text(trail.name);
+
+  $(".append-trail-info").append(cardRow);
 }
 //↓ I am creating a variable that is set to 10
 //..which is the number of trails that will show on the page
@@ -143,8 +153,8 @@ function getTrailName() {
   }).then(function (response) {
     // ↓ declaring variable trails to the API object of the trails
     var trails = response.trails;
-    //console.log("Response", response);
-    // console.log("Trail Name: ", trails);
+
+
 
     // ↓ declaring variable to receive the data from local storage that user picked from index.html
     //.. currentDifficulty string (not variable name) is the KEY in local storage
