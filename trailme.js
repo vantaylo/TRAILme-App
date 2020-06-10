@@ -2,67 +2,70 @@
 //added for loop to go through local storage but only look at btns
 //added a property to the html checkbox element (checked = true)
 //*use 3 handlers if need to optimize speed (localStorage.getItem("") !== null)*
+//USER LOADS PAGE FOR FIRST TIME - all checkboxes empty
 
 $(document).ready(function () {
   for (var i = 0; i < localStorage.length; i++) {
     if (localStorage.key(i).endsWith("Btn")) {
       $("#" + localStorage.key(i)).prop("checked", true);
     }
-    $("#easyBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         //saving to local storage -checked
-     
-         localStorage.setItem("easyBtn", "true");
-         localStorage.setItem("currentDifficulty", "easyBtn");
-       } else {
-         //remove from local storage - uncliked
-         localStorage.removeItem("easyBtn");
-       }
-       console.log("testing isnt working");
-     });
-     
-     $("#easyIntBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         localStorage.setItem("easyIntBtn", "true");
-         localStorage.setItem("currentDifficulty", "easyIntBtn");
-       } else {
-         localStorage.removeItem("easyIntBtn");
-       }
-       console.log("testing isnt working");
-     });
-     
-     $("#intermediateBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         localStorage.setItem("intermediateBtn", "true");
-         localStorage.setItem("currentDifficulty", "intermediateBtn");
-       } else {
-         localStorage.removeItem("intermediateBtn");
-       }
-       console.log("testing isnt working");
-     });
-     
-     $("#intDiffBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         localStorage.setItem("intDiffBtn", "true");
-         localStorage.setItem("currentDifficulty", "intDiffBtn");
-       } else {
-         localStorage.removeItem("intDiffBtn");
-       }
-       console.log("testing isnt working");
-     });
-     
-     $("#difficultBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         localStorage.setItem("difficultBtn", "true");
-         localStorage.setItem("currentDifficulty", "difficultBtn");
-         console.log("checkedtest");
-       } else {
-         localStorage.removeItem("difficultBtn");
-         console.log("test");
-       }
-       console.log("testing isnt working");
-     });
   }
+
+  const uncheckBoxes = (clickedBox) => {
+    $("input").each(function () {
+      if ($(this).is(":checked") && !$(this).is(clickedBox)) {
+        $(this).prop("checked", false);
+      }
+    });
+
+    for (var i = 0; i < localStorage.length; i++) {
+      if (localStorage.key(i).endsWith("Btn")) {
+        $("#" + localStorage.key(i)).prop("checked", true);
+      }
+    }
+  };
+
+  //event listeners for when checkboxes are clicked
+  $("#easyBtn").click(function (event) {
+    uncheckBoxes($(this));
+
+    if ($(this).is(":checked")) {
+      //saving to local storage -checked
+      localStorage.setItem("currentDifficulty", "easyBtn");
+    }
+  });
+
+  $("#easyIntBtn").click(function (event) {
+    uncheckBoxes($(this));
+
+    if ($(this).is(":checked")) {
+      localStorage.setItem("currentDifficulty", "easyIntBtn");
+    }
+  });
+
+  $("#intermediateBtn").click(function (event) {
+    uncheckBoxes($(this));
+
+    if ($(this).is(":checked")) {
+      localStorage.setItem("currentDifficulty", "intermediateBtn");
+    }
+  });
+
+  $("#intDiffBtn").click(function (event) {
+    uncheckBoxes($(this));
+
+    if ($(this).is(":checked")) {
+      localStorage.setItem("currentDifficulty", "intDiffBtn");
+    }
+  });
+
+  $("#difficultBtn").click(function (event) {
+    uncheckBoxes($(this));
+
+    if ($(this).is(":checked")) {
+      localStorage.setItem("currentDifficulty", "difficultBtn");
+    }
+  });
 
   //cities button dropdown and text update
   $(".dropdown-button").dropdown();
@@ -156,10 +159,6 @@ $(document).ready(function () {
   });
 });
 
-//USER LOADS PAGE FOR FIRST TIME - all checkboxes empty
-//event listeners for when checkboxes are clicked
-
-console.log("is this working");
 // Here we are building the URL we need to query the database
 var weatherArray = [];
 var temparray = [];
