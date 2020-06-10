@@ -60,9 +60,9 @@ function renderCard(levelOfDifficulty, trail) {
   var cardActionDiv = $("<div class ='card-action'>").append(linkEl);
   var trailLevel = $(
     `<p class ="trail-data"><a href="https://icons8.com/icon/64470/effort"></a><img
-    class="trail-data"
-    src="https://img.icons8.com/ios-filled/25/000000/effort.png"
-  /> ${levelOfDifficulty} </p>`
+      class="trail-data"
+      src="https://img.icons8.com/ios-filled/25/000000/effort.png"
+    /> ${levelOfDifficulty} </p>`
   );
   var lengthText = trail.length + " miles";
   var trailLengthP = $(
@@ -79,10 +79,27 @@ function renderCard(levelOfDifficulty, trail) {
     trailLengthP,
     rating
   );
-  var trailImageEl = $("<img class = 'materialboxed responsive-img'>").attr(
-    "src",
-    trail.imgSmallMed
-  );
+  var trailImageEl;
+  if (trail.imgSmallMed != "") {
+    trailImageEl = $("<img class = 'materialboxed responsive-img'>").attr(
+      "src",
+      trail.imgSmallMed
+    );
+  } else {
+    trailImgArray = [
+      "https://cdn2.apstatic.com/photos/hike/7036387_smallMed_1555022266.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7035390_smallMed_1555019933.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7055890_smallMed_1555710248.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7052925_smallMed_1555697438.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7055881_smallMed_1555710228.jpg",
+    ];
+    trailImageEl = $(
+      `<img class = 'materialboxed responsive-img' src =${
+        trailImgArray[Math.floor(Math.random() * trailImgArray.length)]
+      }>`
+    );
+  }
+
   var nameOfTrail = trail.name;
   var h2CardTitle = $(
     `<span class = 'card-title text'><strong>${nameOfTrail}</span></h2>`
@@ -131,21 +148,22 @@ function showList(currentDifficulty, trailList) {
   } else if (currentDifficulty === "easyIntBtn") {
     trailList.forEach(function (trail) {
       if (trail.difficulty === "greenBlue") {
-        var count = 0;
-        if (count < numberOfTrailsToDisplay) {
+        var countA = 0;
+        if (countA < numberOfTrailsToDisplay) {
           renderCard("Easy/Intermediate", trail);
         }
-        count++;
+        countA++;
       }
     });
   } else if (currentDifficulty === "intermediateBtn") {
     trailList.forEach(function (trail) {
       if (trail.difficulty === "blue") {
-        var count = 0;
-        if (count < numberOfTrailsToDisplay) {
+        console.log(trails);
+        var countB = 0;
+        if (countB < numberOfTrailsToDisplay) {
           renderCard("Intermediate", trail);
         }
-        count++;
+        countB++;
       }
     });
   } else if (currentDifficulty === "intDiffBtn") {
@@ -203,7 +221,10 @@ function getTrailName() {
     // ↓ declaring variable to receive the data from local storage that user picked from index.html
     //.. currentDifficulty string (not variable name) is the KEY in local storage
     var currentDifficulty = localStorage.getItem("currentDifficulty");
+    console.log(localStorage);
+
     //console.log(localStorage.getItem("currentDifficulty"));
+
     // ↓ calling showlist function and inputing arguments of KEY name currentDifficulty which is also the variable name and trails
     //.. which is variable that has all the trails from Hiking Project API
     showList(currentDifficulty, trails);
