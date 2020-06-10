@@ -88,9 +88,9 @@ $(document).ready(function () {
       longitude: "-97.91153",
     },
 
-    Midland: {
-      latitude: "32.000507",
-      longitude: "-102.077408",
+    "Fort Worth": {
+      latitude: "32.768799",
+      longitude: "-97.309341",
     },
 
     "San Antonio": {
