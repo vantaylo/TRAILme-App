@@ -88,10 +88,15 @@ function renderCard(levelOfDifficulty, trail) {
   } else {
     trailImgArray = [
       "https://cdn2.apstatic.com/photos/hike/7036387_smallMed_1555022266.jpg",
-      "https://cdn2.apstatic.com/photos/hike/7035390_smallMed_1555019933.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7031678_smallMed_1554931541.jpg",
       "https://cdn2.apstatic.com/photos/hike/7055890_smallMed_1555710248.jpg",
       "https://cdn2.apstatic.com/photos/hike/7052925_smallMed_1555697438.jpg",
       "https://cdn2.apstatic.com/photos/hike/7055881_smallMed_1555710228.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7027832_smallMed_1554916999.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7027979_smallMed_1554917331.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7009037_smallMed_1554395717.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7055127_smallMed_1555708381.jpg",
+      "https://cdn2.apstatic.com/photos/hike/7069728_smallMed_1586964832.jpg",
     ];
     trailImageEl = $(
       `<img class = 'materialboxed responsive-img' src =${
@@ -146,30 +151,29 @@ function showList(currentDifficulty, trailList) {
     });
     //↓ same info as above, but just repeated to change the different level of difficulties
   } else if (currentDifficulty === "easyIntBtn") {
+    var count = 0;
     trailList.forEach(function (trail) {
       if (trail.difficulty === "greenBlue") {
-        var countA = 0;
-        if (countA < numberOfTrailsToDisplay) {
+        if (count < numberOfTrailsToDisplay) {
           renderCard("Easy/Intermediate", trail);
         }
-        countA++;
+        count++;
       }
     });
   } else if (currentDifficulty === "intermediateBtn") {
+    var count = 0;
     trailList.forEach(function (trail) {
       if (trail.difficulty === "blue") {
-        console.log(trails);
-        var countB = 0;
-        if (countB < numberOfTrailsToDisplay) {
+        if (count < numberOfTrailsToDisplay) {
           renderCard("Intermediate", trail);
         }
-        countB++;
+        count++;
       }
     });
   } else if (currentDifficulty === "intDiffBtn") {
+    var count = 0;
     trailList.forEach(function (trail) {
       if (trail.difficulty === "blueBlack") {
-        var count = 0;
         if (count < numberOfTrailsToDisplay) {
           renderCard("Intermediate/Difficult", trail);
         }
@@ -177,9 +181,9 @@ function showList(currentDifficulty, trailList) {
       }
     });
   } else if (currentDifficulty === "difficultBtn") {
+    var count = 0;
     trailList.forEach(function (trail) {
       if (trail.difficulty === "black") {
-        var count = 0;
         if (count < numberOfTrailsToDisplay) {
           renderCard("Difficult", trail);
         }
@@ -192,10 +196,10 @@ function showList(currentDifficulty, trailList) {
 function getTrailName() {
   var hikingAPI = "https://www.hikingproject.com/data/get-trails?lat=";
   // ↓ currently hardcoing the max results in the APIkey
-  var apiKey = "200774823-429dcd20b5a00db1d5c1120bef4c2278&maxResults=200";
+  var apiKey = "200774823-429dcd20b5a00db1d5c1120bef4c2278&maxResults=500";
 
   // hardcoding lat long for Austin and a max distance of 50 miles(for now)
-  var maxDist = 50;
+  var maxDist = 200;
   var lat = localStorage.getItem("trailme_latitude") || "30.266666";
   var long = localStorage.getItem("trailme_longitude") || "-97.73333";
 
