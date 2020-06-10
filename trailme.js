@@ -128,7 +128,6 @@ $(document).ready(function () {
 
   //prompt user to pick at least one level
   $("#submit-btn").click(function (event) {
-    // event.preventDefault();
     let optionChecked = false;
 
     $("input").each(function (index) {
@@ -138,14 +137,13 @@ $(document).ready(function () {
     });
 
     var currentCity = $(".dropdown-button").text();
-    console.log(currentCity);
 
     if (!optionChecked) {
       M.toast({ html: "Please, pick at least one level" });
       return;
     }
 
-    if (currentCity === "CITIES") {
+    if (currentCity === "Cities") {
       M.toast({ html: "Please, pick a city" });
       return;
     }
