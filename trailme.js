@@ -8,6 +8,60 @@ $(document).ready(function () {
     if (localStorage.key(i).endsWith("Btn")) {
       $("#" + localStorage.key(i)).prop("checked", true);
     }
+    $("#easyBtn").click(function (event) {
+       if ($(this).is(":checked")) {
+         //saving to local storage -checked
+     
+         localStorage.setItem("easyBtn", "true");
+         localStorage.setItem("currentDifficulty", "easyBtn");
+       } else {
+         //remove from local storage - uncliked
+         localStorage.removeItem("easyBtn");
+       }
+       console.log("testing isnt working");
+     });
+     
+     $("#easyIntBtn").click(function (event) {
+       if ($(this).is(":checked")) {
+         localStorage.setItem("easyIntBtn", "true");
+         localStorage.setItem("currentDifficulty", "easyIntBtn");
+       } else {
+         localStorage.removeItem("easyIntBtn");
+       }
+       console.log("testing isnt working");
+     });
+     
+     $("#intermediateBtn").click(function (event) {
+       if ($(this).is(":checked")) {
+         localStorage.setItem("intermediateBtn", "true");
+         localStorage.setItem("currentDifficulty", "intermediateBtn");
+       } else {
+         localStorage.removeItem("intermediateBtn");
+       }
+       console.log("testing isnt working");
+     });
+     
+     $("#intDiffBtn").click(function (event) {
+       if ($(this).is(":checked")) {
+         localStorage.setItem("intDiffBtn", "true");
+         localStorage.setItem("currentDifficulty", "intDiffBtn");
+       } else {
+         localStorage.removeItem("intDiffBtn");
+       }
+       console.log("testing isnt working");
+     });
+     
+     $("#difficultBtn").click(function (event) {
+       if ($(this).is(":checked")) {
+         localStorage.setItem("difficultBtn", "true");
+         localStorage.setItem("currentDifficulty", "difficultBtn");
+         console.log("checkedtest");
+       } else {
+         localStorage.removeItem("difficultBtn");
+         console.log("test");
+       }
+       console.log("testing isnt working");
+     });
   }
 
   //cities button dropdown and text update
@@ -16,6 +70,7 @@ $(document).ready(function () {
   $("li a").click(function (event) {
     let cityPicked = $(this).text();
     $(".dropdown-button").html(cityPicked);
+    console.log("city button works");
   });
 
   //object for apiURL
@@ -73,7 +128,6 @@ $(document).ready(function () {
 
   //prompt user to pick at least one level
   $("#submit-btn").click(function (event) {
-    // event.preventDefault();
     let optionChecked = false;
 
     $("input").each(function (index) {
@@ -83,14 +137,13 @@ $(document).ready(function () {
     });
 
     var currentCity = $(".dropdown-button").text();
-    console.log(currentCity);
 
     if (!optionChecked) {
       M.toast({ html: "Please, pick at least one level" });
       return;
     }
 
-    if (currentCity === "CITIES") {
+    if (currentCity === "Cities") {
       M.toast({ html: "Please, pick a city" });
       return;
     }
@@ -105,54 +158,8 @@ $(document).ready(function () {
 
 //USER LOADS PAGE FOR FIRST TIME - all checkboxes empty
 //event listeners for when checkboxes are clicked
-$("#easyBtn").click(function (event) {
-  if ($(this).is(":checked")) {
-    //saving to local storage -checked
 
-    localStorage.setItem("easyBtn", "true");
-    localStorage.setItem("currentDifficulty", "easyBtn");
-  } else {
-    //remove from local storage - uncliked
-    localStorage.removeItem("easyBtn");
-  }
-});
-
-$("#easyIntBtn").click(function (event) {
-  if ($(this).is(":checked")) {
-    localStorage.setItem("easyIntBtn", "true");
-    localStorage.setItem("currentDifficulty", "easyIntBtn");
-  } else {
-    localStorage.removeItem("easyIntBtn");
-  }
-});
-
-$("#intermediateBtn").click(function (event) {
-  if ($(this).is(":checked")) {
-    localStorage.setItem("intermediateBtn", "true");
-    localStorage.setItem("currentDifficulty", "intermediateBtn");
-  } else {
-    localStorage.removeItem("intermediateBtn");
-  }
-});
-
-$("#intDiffBtn").click(function (event) {
-  if ($(this).is(":checked")) {
-    localStorage.setItem("intDiffBtn", "true");
-    localStorage.setItem("currentDifficulty", "intDiffBtn");
-  } else {
-    localStorage.removeItem("intDiffBtn");
-  }
-});
-
-$("#difficultBtn").click(function (event) {
-  if ($(this).is(":checked")) {
-    localStorage.setItem("difficultBtn", "true");
-    localStorage.setItem("currentDifficulty", "difficultBtn");
-  } else {
-    localStorage.removeItem("difficultBtn");
-  }
-});
-
+console.log("is this working");
 // Here we are building the URL we need to query the database
 var weatherArray = [];
 var temparray = [];

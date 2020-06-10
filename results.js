@@ -3,9 +3,9 @@ $(document).ready(function () {
   populateTable();
 });
 // ↑ END $(document).ready(function())
-
+console.log(localStorage);
 //weather dashboard
-
+//console.log(localStorage.getItem("currentDifficulty"));
 function populateTable() {
   var weatherarray = [];
   var temparray = [];
@@ -222,9 +222,13 @@ function getTrailName() {
     //.. currentDifficulty string (not variable name) is the KEY in local storage
     var currentDifficulty = localStorage.getItem("currentDifficulty");
     console.log(localStorage);
+
+    //console.log(localStorage.getItem("currentDifficulty"));
+
     // ↓ calling showlist function and inputing arguments of KEY name currentDifficulty which is also the variable name and trails
     //.. which is variable that has all the trails from Hiking Project API
     showList(currentDifficulty, trails);
     //console.info("afterShowList");
   });
+  console.log(localStorage.getItem("currentDifficulty"));
 }
