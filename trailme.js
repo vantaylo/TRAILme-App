@@ -9,59 +9,59 @@ $(document).ready(function () {
       $("#" + localStorage.key(i)).prop("checked", true);
     }
     $("#easyBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         //saving to local storage -checked
-     
-         localStorage.setItem("easyBtn", "true");
-         localStorage.setItem("currentDifficulty", "easyBtn");
-       } else {
-         //remove from local storage - uncliked
-         localStorage.removeItem("easyBtn");
-       }
-       console.log("testing isnt working");
-     });
-     
-     $("#easyIntBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         localStorage.setItem("easyIntBtn", "true");
-         localStorage.setItem("currentDifficulty", "easyIntBtn");
-       } else {
-         localStorage.removeItem("easyIntBtn");
-       }
-       console.log("testing isnt working");
-     });
-     
-     $("#intermediateBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         localStorage.setItem("intermediateBtn", "true");
-         localStorage.setItem("currentDifficulty", "intermediateBtn");
-       } else {
-         localStorage.removeItem("intermediateBtn");
-       }
-       console.log("testing isnt working");
-     });
-     
-     $("#intDiffBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         localStorage.setItem("intDiffBtn", "true");
-         localStorage.setItem("currentDifficulty", "intDiffBtn");
-       } else {
-         localStorage.removeItem("intDiffBtn");
-       }
-       console.log("testing isnt working");
-     });
-     
-     $("#difficultBtn").click(function (event) {
-       if ($(this).is(":checked")) {
-         localStorage.setItem("difficultBtn", "true");
-         localStorage.setItem("currentDifficulty", "difficultBtn");
-         console.log("checkedtest");
-       } else {
-         localStorage.removeItem("difficultBtn");
-         console.log("test");
-       }
-       console.log("testing isnt working");
-     });
+      if ($(this).is(":checked")) {
+        //saving to local storage -checked
+
+        localStorage.setItem("easyBtn", "true");
+        localStorage.setItem("currentDifficulty", "easyBtn");
+      } else {
+        //remove from local storage - uncliked
+        localStorage.removeItem("easyBtn");
+      }
+      console.log("testing isnt working");
+    });
+
+    $("#easyIntBtn").click(function (event) {
+      if ($(this).is(":checked")) {
+        localStorage.setItem("easyIntBtn", "true");
+        localStorage.setItem("currentDifficulty", "easyIntBtn");
+      } else {
+        localStorage.removeItem("easyIntBtn");
+      }
+      console.log("testing isnt working");
+    });
+
+    $("#intermediateBtn").click(function (event) {
+      if ($(this).is(":checked")) {
+        localStorage.setItem("intermediateBtn", "true");
+        localStorage.setItem("currentDifficulty", "intermediateBtn");
+      } else {
+        localStorage.removeItem("intermediateBtn");
+      }
+      console.log("testing isnt working");
+    });
+
+    $("#intDiffBtn").click(function (event) {
+      if ($(this).is(":checked")) {
+        localStorage.setItem("intDiffBtn", "true");
+        localStorage.setItem("currentDifficulty", "intDiffBtn");
+      } else {
+        localStorage.removeItem("intDiffBtn");
+      }
+      console.log("testing isnt working");
+    });
+
+    $("#difficultBtn").click(function (event) {
+      if ($(this).is(":checked")) {
+        localStorage.setItem("difficultBtn", "true");
+        localStorage.setItem("currentDifficulty", "difficultBtn");
+        console.log("checkedtest");
+      } else {
+        localStorage.removeItem("difficultBtn");
+        console.log("test");
+      }
+      console.log("testing isnt working");
+    });
   }
 
   //cities button dropdown and text update
@@ -85,9 +85,9 @@ $(document).ready(function () {
       longitude: "-97.91153",
     },
 
-    Midland: {
-      latitude: "32.000507",
-      longitude: "-102.077408",
+    "Fort Worth": {
+      latitude: "32.768799",
+      longitude: "-97.309341",
     },
 
     "San Antonio": {
