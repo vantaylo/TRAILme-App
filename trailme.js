@@ -73,7 +73,6 @@ $(document).ready(function () {
   $("li a").click(function (event) {
     let cityPicked = $(this).text();
     $(".dropdown-button").html(cityPicked);
-    console.log("city button works");
   });
 
   //object for apiURL

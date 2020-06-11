@@ -4,7 +4,6 @@ $(document).ready(function () {
   
 });
 // ↑ END $(document).ready(function())
-console.log(localStorage);
 //weather dashboard
 //console.log(localStorage.getItem("currentDifficulty"));
 function populateTable() {
@@ -231,7 +230,6 @@ function getTrailName() {
     // ↓ declaring variable to receive the data from local storage that user picked from index.html
     //.. currentDifficulty string (not variable name) is the KEY in local storage
     var currentDifficulty = localStorage.getItem("currentDifficulty");
-    console.log(localStorage);
 
     //console.log(localStorage.getItem("currentDifficulty"));
 
@@ -240,5 +238,4 @@ function getTrailName() {
     showList(currentDifficulty, trails);
     //console.info("afterShowList");
   });
-  console.log(localStorage.getItem("currentDifficulty"));
 }
