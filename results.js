@@ -1,7 +1,6 @@
 $(document).ready(function () {
   getTrailName();
   populateTable();
-  
 });
 // ↑ END $(document).ready(function())
 //weather dashboard
@@ -53,10 +52,9 @@ function populateTable() {
 //.. difficulty received from HikingProject API
 //.. to understand the card layout look at Cards tab on Materialize CSS framework website(Horizontal Card Layout)
 function renderCard(levelOfDifficulty, trail) {
-  var linkEl = $("<a class = 'link' href='#'> More Info </a>").attr(
-    "href",
-    trail.url
-  );
+  var linkEl = $(
+    "<a class = 'link' href='#' target ='_blank'> More Info </a>"
+  ).attr("href", trail.url);
   var cardActionDiv = $("<div class ='card-action'>").append(linkEl);
   var trailLevel = $(
     `<p class ="trail-data"><a href="https://icons8.com/icon/64470/effort"></a><img
@@ -204,7 +202,7 @@ function getTrailName() {
   var apiKey = "200774823-429dcd20b5a00db1d5c1120bef4c2278&maxResults=500";
 
   // hardcoding lat long for Austin and a max distance of 50 miles(for now)
-  var maxDist = 200;
+  var maxDist = 50;
   var lat = localStorage.getItem("trailme_latitude") || "30.266666";
   var long = localStorage.getItem("trailme_longitude") || "-97.73333";
 
