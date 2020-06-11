@@ -1,23 +1,40 @@
-# Trailme-Locator
+# TRAILme-LOCATOR
 
 ## Team Members
+
 - Henri
 - Vanessa
 - Steve
 
 ## Value Add Proposal
-1. AS A a hiker
-2. I WANT to find a trail at my level
-3. SO THAT I can go hiking 
+
+An app that:
+
+- Allows hikers to find hiking trails in their city at their desire difficulty level.
+- Along with the hourly weather for the city the user will be hiking in.
 
 ## MVP
-Hiker picks level of hiking trail, returns trails at that level. 
-Nice to have: provide with a playlist for the hike based on today’s weather forecast
+
+- User criteria, select city and level of difficulty for hiking trails.
+
+- Populate trails based on criteria with image.
+  Display hourly forecast for city selected.
+
+## Tech Stack & Tools
+
+- JQuery
+- CSS Framework
+  - Materialize
 
 ## API list
+
 | Provider       |
 | -------------- |
 | Hiking Project |
-| Google Maps    |
 | OpenWeather    |
-| Spotify        |
+
+## Project Board
+
+- MVP Project Board
+
+## Wireframe
