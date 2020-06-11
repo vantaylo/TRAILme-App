@@ -1,6 +1,7 @@
 $(document).ready(function () {
   getTrailName();
   populateTable();
+  
 });
 // ↑ END $(document).ready(function())
 console.log(localStorage);
@@ -149,6 +150,7 @@ function showList(currentDifficulty, trailList) {
         count++;
       }
     });
+    localStorage.clear();
     //↓ same info as above, but just repeated to change the different level of difficulties
   } else if (currentDifficulty === "easyIntBtn") {
     var count = 0;
@@ -160,6 +162,7 @@ function showList(currentDifficulty, trailList) {
         count++;
       }
     });
+    localStorage.clear();
   } else if (currentDifficulty === "intermediateBtn") {
     var count = 0;
     trailList.forEach(function (trail) {
@@ -170,6 +173,7 @@ function showList(currentDifficulty, trailList) {
         count++;
       }
     });
+    localStorage.clear();
   } else if (currentDifficulty === "intDiffBtn") {
     var count = 0;
     trailList.forEach(function (trail) {
@@ -180,6 +184,7 @@ function showList(currentDifficulty, trailList) {
         count++;
       }
     });
+    localStorage.clear();
   } else if (currentDifficulty === "difficultBtn") {
     var count = 0;
     trailList.forEach(function (trail) {
@@ -190,6 +195,7 @@ function showList(currentDifficulty, trailList) {
         count++;
       }
     });
+    localStorage.clear();
   }
 }
 //↓ This function will retreive the hiking trails from Hiking Project API
