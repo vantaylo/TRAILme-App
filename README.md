@@ -37,4 +37,6 @@ An app that:
 
 - MVP Project Board
 
-## Wireframe
+## Deployed
+[Go to App!](https://group-3-project-1.github.io/Trailme-Locator/)
+
