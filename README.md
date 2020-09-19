@@ -2,10 +2,6 @@
 
 ## Team Members
 
-- Henri
-- Vanessa
-- Steve
-
 ## Value Add Proposal
 
 An app that:
@@ -16,15 +12,18 @@ An app that:
 ## MVP
 
 - User criteria, select city and level of difficulty for hiking trails.
-
 - Populate trails based on criteria with image.
-  Display hourly forecast for city selected.
+- Display hourly forecast for city selected.
 
 ## Tech Stack & Tools
 
-- JQuery
-- CSS Framework
-  - Materialize
+- Node.js
+- React js
+- Express.js
+- MongoDB 
+- Bootstrap
+- APIs
+- Auth0
 
 ## API list
 
@@ -33,10 +32,14 @@ An app that:
 | Hiking Project |
 | OpenWeather    |
 
-## Project Board
+## Flow Charts
 
-- MVP Project Board
 
-## Deployed
+
+## Wireframes
+![Homepage Prototype](https://www.dropbox.com/s/n5kjnxod2c7rmt2/homepagePrototype.png?dl=0)
+
+
+## Links
 [Go to App!](https://group-3-project-1.github.io/Trailme-Locator/)
 
