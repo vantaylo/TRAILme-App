@@ -37,7 +37,8 @@ An app that:
 
 
 ## Wireframes
-![Homepage Prototype](homepagePrototype.png = 250x)
+<img src="homepagePrototype.png" width="250" />
+
 
 
 ## Links
