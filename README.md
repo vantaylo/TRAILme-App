@@ -37,7 +37,7 @@ An app that:
 
 
 ## Wireframes
-![Homepage Prototype](https://www.dropbox.com/s/n5kjnxod2c7rmt2/homepagePrototype.png?dl=0)
+![Homepage Prototype](homepagePrototype.png)
 
 
 ## Links
