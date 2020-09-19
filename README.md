@@ -37,9 +37,9 @@ An app that:
 
 
 ## Wireframes
-![Homepage Prototype](homepagePrototype.png)
+![Homepage Prototype](homepagePrototype.png width="250" height="250")
 
 
 ## Links
-[Go to App!](https://group-3-project-1.github.io/Trailme-Locator/ width="250" height="250")
+[Go to App!](https://group-3-project-1.github.io/Trailme-Locator/)
 
