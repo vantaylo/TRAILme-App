@@ -41,5 +41,5 @@ An app that:
 
 
 ## Links
-[Go to App!](https://group-3-project-1.github.io/Trailme-Locator/)
+[Go to App!](https://group-3-project-1.github.io/Trailme-Locator/ width="250" height="250")
 
