@@ -36,7 +36,7 @@ An app that:
 
 ## ER Diagram
 
-<img src="TRAILme_ERdiagram.png" />
+<img src="TRAILme_ERdiagram.png" width="500" />
 
 ## Flow Charts
 
