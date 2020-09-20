@@ -1,4 +1,4 @@
-# TRAILme-LOCATOR
+# TRAILme-App
 
 ## Team Members
 
