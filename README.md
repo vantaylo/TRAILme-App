@@ -31,6 +31,8 @@ An app that:
 | -------------- |
 | Hiking Project |
 | OpenWeather    |
+| Fitbit         |
+| Google Maps    |
 
 ## Flow Charts
 
