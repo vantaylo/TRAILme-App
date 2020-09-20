@@ -34,6 +34,10 @@ An app that:
 | Fitbit         |
 | Google Maps    |
 
+## ER Diagram
+
+<img src="TRAILme_ERdiagram.png" />
+
 ## Flow Charts
 
 ## Wireframes
