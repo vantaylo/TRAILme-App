@@ -37,7 +37,7 @@ An app that:
 
 
 ## Wireframes
-<img src="homepagePrototype.png" width="250" />
+<img src="homepagePrototype.png" width="250" /> <img src="weather&Trails.png" width="250" />
 
 
 
