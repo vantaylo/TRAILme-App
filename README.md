@@ -20,7 +20,7 @@ An app that:
 - Node.js
 - React js
 - Express.js
-- MongoDB 
+- MongoDB
 - Bootstrap
 - APIs
 - Auth0
@@ -34,13 +34,11 @@ An app that:
 
 ## Flow Charts
 
-
-
 ## Wireframes
-<img src="homepagePrototype.png" width="250" /> <img src="weather&Trails.png" width="250" />
 
-
+<img src="homepagePrototype.png" width="250" /> <img src="loginPage
+.png" width="250" /> <img src="resultsPage.png" width="250" />
 
 ## Links
-[Go to App!](https://group-3-project-1.github.io/Trailme-Locator/)
 
+[Go to App!](https://group-3-project-1.github.io/Trailme-Locator/)
