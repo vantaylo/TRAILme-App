@@ -26,10 +26,6 @@ An app that:
 | Hiking Project |
 | OpenWeather    |
 
-## ER Diagram
-
-<img src="TRAILme_ERdiagram.png" width="500" />
-
 ## Wireframes
 
 <img src="homepagePrototype.png" width="250" /> <img src="loginPage.png" width="250" /> <img src="resultsPage.png" width="250" />
