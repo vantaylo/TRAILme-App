@@ -28,7 +28,7 @@ An app that:
 
 ## Preview
 
-<img src="homepagePrototype.png" width="500" /> <img src="resultsPage.png" width="250" />
+<img src="homepagePrototype.png" width="500" /> <img src="resultsPage.png" width="500" />
 
 ## Links
 
