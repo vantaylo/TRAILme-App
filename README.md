@@ -28,7 +28,7 @@ An app that:
 
 ## Wireframes
 
-<img src="homepagePrototype.png" width="250" /> <img src="loginPage.png" width="250" /> <img src="resultsPage.png" width="250" />
+<img src="homepagePrototype.png" width="250" /> <img src="resultsPage.png" width="250" />
 
 ## Links
 
