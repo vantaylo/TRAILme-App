@@ -1,13 +1,10 @@
 # TRAILme-App
 
-## Team Members
-
 ## Value Add Proposal
 
 An app that:
 
 - Allows hikers to find hiking trails in their city at their desire difficulty level.
-- Along with the hourly weather for the city the user will be hiking in.
 
 ## MVP
 
@@ -18,12 +15,9 @@ An app that:
 ## Tech Stack & Tools
 
 - Node.js
-- React js
-- Express.js
-- MongoDB
-- Bootstrap
+- jQuery
+- Materalized
 - APIs
-- Auth0
 
 ## API list
 
@@ -31,14 +25,10 @@ An app that:
 | -------------- |
 | Hiking Project |
 | OpenWeather    |
-| Fitbit         |
-| Google Maps    |
 
 ## ER Diagram
 
 <img src="TRAILme_ERdiagram.png" width="500" />
-
-## Flow Charts
 
 ## Wireframes
 
